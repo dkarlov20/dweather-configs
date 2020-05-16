@@ -1,0 +1,14 @@
+dweather:
+    weatherbit:
+        url: https://api.weatherbit.io/v2.0/forecast/daily
+        city: Kharkiv
+    mongodb:
+        host: localhost
+        port: 27017
+        database: dweather
+        collection:
+            event: events
+eureka:
+    client:
+        service-url:
+            defaultZone: http://localhost:8761/eureka/

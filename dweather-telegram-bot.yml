@@ -1,0 +1,29 @@
+dweather:
+    command:
+        selection:
+            events: 'Your events:'
+            precipitation: 'Select desired precipitation:'
+            temperature: 'Select desired temperature interval:'
+            wind: 'Select desired wind interval:'
+    api:
+        url: http://dweather-core/v1/dweather/events
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://localhost:8761/eureka/
+
+hystrix:
+    command:
+        event-by-userId:
+            circuitBreaker:
+                requestVolumeThreshold: 2
+        save-event:
+            circuitBreaker:
+                requestVolumeThreshold: 1
+        event-by-id:
+            circuitBreaker:
+                requestVolumeThreshold: 2
+        default:
+            circuitBreaker:
+                errorThresholdPercentage: 20
